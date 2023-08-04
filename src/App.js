@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 
 class App extends Component {
-  state = { on: true };
+  state = { on: false };
+  toggle = () => {
+    const isOn = this.state.on;
+    this.setState({ on: !isOn });
+  };
   render() {
     let wallClass = "wall off";
     if (this.state.on) {
@@ -11,7 +15,7 @@ class App extends Component {
       <div className={wallClass}>
         <div className="switch-plate">
           <div className="screw" />
-          <div className="switch">
+          <div className="switch" onClick={this.toggle}>
             <div className="switch-handle" />
           </div>
           <div className="screw" />
