@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Switch from "./Switch";
 
 class App extends Component {
   state = { on: false };
@@ -13,13 +14,8 @@ class App extends Component {
     }
     return (
       <div className={wallClass}>
-        <div className="switch-plate">
-          <div className="screw" />
-          <div className="switch" onClick={this.toggle}>
-            <div className="switch-handle" />
-          </div>
-          <div className="screw" />
-        </div>
+        <Switch />
+        <Switch />
       </div>
     );
   }
